@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background: #f0f2f5;
+                padding: 40px;
+            }
+
+            .container {
+                max-width: 500px;
+                margin: auto;
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .input-group {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .input-group input {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 14px;
+            }
+
+            .input-group button {
+                padding: 10px 20px;
+                background: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .task-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px;
+                margin: 5px 0;
+                background: #f9f9f9;
+                border-radius: 5px;
+                border-left: 4px solid #007bff;
+            }
+
+            .task-item.completed {
+                border-left-color: #28a745;
+                background: #e8f5e9;
+                text-decoration: line-through;
+                color: #666;
+            }
+
+            .task-item .actions button {
+                margin-left: 5px;
+                padding: 5px 10px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            .btn-complete {
+                background: #28a745;
+                color: white;
+            }
+
+            .btn-edit {
+                background: #ffc107;
+                color: black;
+            }
+
+            .btn-delete {
+                background: #dc3545;
+                color: white;
+            }
+
+            #taskCount {
+                margin-top: 15px;
+                color: #666;
+                font-size: 14px;
+            }
+
+            .empty-msg {
+                text-align: center;
+                color: #999;
+                padding: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Task Manager</h2>
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Enter a new task...">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <div id="taskList"></div>
+            <div id="taskCount">0 tasks</div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>

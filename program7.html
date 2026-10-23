@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API Data Fetch</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background: #f0f2f5;
+                padding: 40px;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th {
+                background: #007bff;
+                color: white;
+                padding: 12px;
+                text-align: left;
+            }
+
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            tr:hover {
+                background: #f5f5f5;
+            }
+
+            #loading {
+                text-align: center;
+                padding: 40px;
+                font-size: 18px;
+                color: #666;
+                display: none;
+            }
+
+            #error {
+                color: #dc3545;
+                text-align: center;
+                padding: 20px;
+                display: none;
+                background: #f8d7da;
+                border-radius: 5px;
+            }
+
+            .spinner {
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #007bff;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 10px;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .btn {
+                padding: 10px 20px;
+                background: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+
+            .btn:hover {
+                background: #0056b3;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Users Data from API</h2>
+            <button class="btn" onclick="fetchUsers()">Load Users</button>
+            <div id="loading">
+                <div class="spinner"></div>Loading...
+            </div>
+            <div id="error"></div>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="userBody"></tbody>
+            </table>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
